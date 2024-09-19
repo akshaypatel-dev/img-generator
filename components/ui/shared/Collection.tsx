@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
+import { CldImage } from "next-cloudinary";
+
 import {
 	Pagination,
 	PaginationContent,
@@ -12,6 +14,7 @@ import {
 import { transformationTypes } from "@/constants";
 import { IImage } from "@/lib/database/models/image.model";
 import { formUrlQuery } from "@/lib/utils";
+
 import { Search } from "./Search";
 import { Button } from "../button";
 
