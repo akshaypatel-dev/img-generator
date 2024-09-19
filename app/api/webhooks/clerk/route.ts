@@ -1,12 +1,10 @@
 /* eslint-disable camelcase */
-/*eslint/no-unused-vars */
-import { clerkClient, WebhookEvent } from "@clerk/nextjs/server";
-import { headers } from "next/headers";
+import { WebhookEvent, clerkClient } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { Webhook } from "svix";
 
 import { createUser, deleteUser, updateUser } from "@/lib/actions/user.actions";
-import { object } from "zod";
+import { headers } from "next/headers";
 
 export async function POST(req: Request) {
 	// You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
@@ -63,7 +61,7 @@ export async function POST(req: Request) {
 		const { id, email_addresses, image_url, first_name, last_name, username } =
 			evt.data;
 
-		const user: any = {
+		const user = {
 			clerkId: id,
 			email: email_addresses[0].email_address,
 			username: username!,
@@ -90,7 +88,7 @@ export async function POST(req: Request) {
 	if (eventType === "user.updated") {
 		const { id, image_url, first_name, last_name, username } = evt.data;
 
-		const user: any = {
+		const user = {
 			firstName: first_name,
 			lastName: last_name,
 			username: username!,
