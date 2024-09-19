@@ -1,11 +1,10 @@
-import { auth } from "@clerk/nextjs";
 import Image from "next/image";
 import { redirect } from "next/navigation";
-
-import { Collection } from "@/components/shared/Collection";
-import Header from "@/components/shared/Header";
 import { getUserImages } from "@/lib/actions/image.actions";
 import { getUserById } from "@/lib/actions/user.actions";
+import { auth } from "@clerk/nextjs/server";
+import Header from "@/components/ui/shared/Header";
+import { Collection } from "@/components/ui/shared/Collection";
 
 const Profile = async ({ searchParams }: SearchParamProps) => {
 	const page = Number(searchParams?.page) || 1;
@@ -19,7 +18,6 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
 	return (
 		<>
 			<Header title="Profile" />
-
 			<section className="profile">
 				<div className="profile-balance">
 					<p className="p-14-medium md:p-16-medium">CREDITS AVAILABLE</p>
