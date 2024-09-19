@@ -37,6 +37,7 @@ import { CustomField } from "./CustomField";
 import MediaUploader from "./MediaUploader";
 import { InsufficientCreditsModal } from "./InsufficientCreditModel";
 import TransformedImage from "./TransformImage";
+import { getCldImageUrl } from "next-cloudinary";
 
 export const formSchema = z.object({
 	title: z.string(),

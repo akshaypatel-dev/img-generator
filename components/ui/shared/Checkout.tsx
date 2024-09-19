@@ -1,5 +1,6 @@
 "use client";
 
+import { loadStripe } from "@stripe/stripe-js";
 import { useEffect } from "react";
 
 import { checkoutCredits } from "@/lib/actions/transaction.action";
