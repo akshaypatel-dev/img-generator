@@ -7,7 +7,6 @@ import { checkoutCredits } from "@/lib/actions/transaction.action";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "../button";
 
-
 const Checkout = ({
 	plan,
 	amount,
