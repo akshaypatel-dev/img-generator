@@ -1,5 +1,5 @@
 "use client";
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
 import { loadStripe } from "@stripe/stripe-js";
 import { useEffect } from "react";
 
